@@ -12,6 +12,8 @@ import { ScreenshotsSection } from "@/components/landing/screenshots-section";
 import { UserBenefitsSection } from "@/components/landing/user-benefits-section";
 import { WhatTheAppDoesSection } from "@/components/landing/what-the-app-does-section";
 
+export const runtime = "edge";
+
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-dvh bg-vos-bg-light text-vos-text-primary selection:bg-vos-accent/30 selection:text-vos-primary">
