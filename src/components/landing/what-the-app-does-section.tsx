@@ -1,0 +1,126 @@
+import Image from "next/image"
+import { BookOpenText, Headphones, Sparkles, TrendingUp } from "lucide-react"
+import { GoldFrame } from "./gold-frame"
+
+const featuresList = [
+  {
+    icon: BookOpenText,
+    title: "Sacred Texts Unveiled",
+    description: "Instantly explore a curated library of timeless scriptures and foundational wisdom.",
+  },
+  {
+    icon: Headphones,
+    title: "Your Audio Sanctuary",
+    description: "Immerse yourself in calming narrations and reflections that inspire, renew, and uplift.",
+  },
+  {
+    icon: Sparkles,
+    title: "Daily Wisdom Delivered",
+    description: "Receive divinely inspired quotes and passages each day to illuminate your spiritual path.",
+  },
+]
+
+const screenshotData = [
+  {
+    src: "/generic-app-screenshot.png?height=1000&width=500&query=premium+spiritual+app+screenshot+1+calm+interface+elegant+content+focused+divine+light",
+    alt: "App Screenshot 1 - Content View",
+    rotation: "-rotate-3",
+    zIndex: "z-10",
+    scale: "scale-95",
+    positionClasses: "md:translate-x-[-18%] md:translate-y-[3%]",
+  },
+  {
+    src: "/generic-app-screenshot.png?height=1050&width=525&query=premium+spiritual+app+screenshot+2+elegant+player+interface+glowing+controls",
+    alt: "App Screenshot 2 - Player View",
+    rotation: "rotate-1",
+    zIndex: "z-20",
+    scale: "scale-100",
+    positionClasses: "md:translate-y-[-2%]",
+  },
+  {
+    src: "/generic-app-screenshot.png?height=1000&width=500&query=premium+spiritual+app+screenshot+3+serene+daily+quote+view+heavenly+background",
+    alt: "App Screenshot 3 - Daily Quote",
+    rotation: "rotate-3",
+    zIndex: "z-10",
+    scale: "scale-95",
+    positionClasses: "md:translate-x-[18%] md:translate-y-[3%]",
+  },
+]
+
+export function WhatTheAppDoesSection() {
+  return (
+    <section
+      id="features"
+      className="w-full py-section-gap bg-vos-card-light border-y border-vos-border/50 overflow-hidden"
+    >
+      <div className="container mx-auto px-4 md:px-6 max-w-screen-lg space-y-16 md:space-y-20">
+        <div className="text-center space-y-4 md:space-y-5 animate-fade-in-up">
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.75rem] font-bold text-vos-primary tracking-tight leading-tight">
+            Experience the Divine Difference
+          </h2>
+          <p className="text-lg md:text-xl text-vos-secondary max-w-3xl mx-auto leading-relaxed">
+            Voice of the Shepherd is more than an app – it&apos;s your{" "}
+            <strong className="text-vos-primary">sacred space for spiritual awakening</strong>. Discover features
+            designed to elevate your daily practice.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {featuresList.map((feature, idx) => (
+            <div
+              key={feature.title}
+              className="flex flex-col items-center text-center p-6 md:p-8 bg-vos-bg-light rounded-3xl shadow-lifted border-2 border-vos-border/60 transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-2.5 group animate-fade-in-up"
+              style={{ animationDelay: `${200 + idx * 100}ms` }}
+            >
+              <div className="p-4 bg-vos-accent/20 rounded-full mb-6 group-hover:bg-vos-accent/30 transition-colors duration-300 shadow-soft group-hover:shadow-glow_accent">
+                <feature.icon
+                  className="w-10 h-10 text-vos-accent group-hover:scale-110 transition-transform duration-300"
+                  strokeWidth={1.75}
+                />
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold text-vos-primary mb-3 font-serif">{feature.title}</h3>
+              <p className="text-sm md:text-base text-vos-secondary leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative mt-20 md:mt-28 h-auto min-h-[520px] sm:min-h-[600px] md:min-h-[720px] lg:min-h-[800px] flex justify-center items-center group animate-fade-in-up animation-delay-500">
+          {screenshotData.map((shot, index) => (
+            <div
+              key={index}
+              className={`absolute transition-all duration-700 ease-out group-hover:scale-[1.03] ${shot.zIndex} ${shot.rotation} ${shot.scale} ${shot.positionClasses} group-hover:rotate-0 group-hover:!translate-x-0 group-hover:!translate-y-0 group-hover:!scale-105`}
+              style={{
+                transitionProperty: "transform, opacity",
+                width: "clamp(190px, 23vw, 320px)",
+              }}
+            >
+              <GoldFrame
+                className="w-full h-auto aspect-[9/19]"
+                borderRadius="rounded-3xl md:rounded-[36px]"
+                padding="p-2 md:p-2.5"
+              >
+                <Image
+                  src={shot.src || "/placeholder.svg"}
+                  alt={shot.alt}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-500 ease-out group-hover:scale-105"
+                  priority={index < 2}
+                />
+              </GoldFrame>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 md:mt-16 text-center animate-fade-in-up animation-delay-600">
+          <div className="inline-flex items-center gap-3 bg-vos-primary/5 text-vos-primary border-2 border-vos-primary/20 px-5 py-2.5 rounded-full text-base font-semibold mb-6 shadow-soft hover:shadow-medium transition-shadow">
+            <TrendingUp size={20} className="text-vos-accent animate-subtle-pulse" />
+            <span>
+              Be first for <strong className="text-vos-primary">new sacred journeys</strong> & exclusive content!
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
