@@ -1,114 +1,131 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useCallback } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Apple, DownloadCloud, X } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Apple, DownloadCloud, X } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
 
 export function ExitIntentPopup() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [hasTriggered, setHasTriggered] = useState(false) // Ensure it triggers only once
+  const [isOpen, setIsOpen] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false); // Ensure it triggers only once
 
   const handleMouseOut = useCallback(
     (e: MouseEvent) => {
-      if (hasTriggered) return
+      if (hasTriggered) return;
 
       // Check if mouse is near the top of the viewport
       if (e.clientY < 15) {
-        setIsOpen(true)
-        setHasTriggered(true) // Mark as triggered
-        document.removeEventListener("mouseout", handleMouseOut) // Remove listener after triggering
+        setIsOpen(true);
+        setHasTriggered(true); // Mark as triggered
+        document.removeEventListener("mouseout", handleMouseOut); // Remove listener after triggering
       }
     },
-    [hasTriggered],
-  )
+    [hasTriggered]
+  );
 
   useEffect(() => {
     // Add a delay before attaching the event listener to avoid immediate trigger on load
     const timer = setTimeout(() => {
-      document.addEventListener("mouseout", handleMouseOut)
-    }, 3000) // 3-second delay
+      document.addEventListener("mouseout", handleMouseOut);
+    }, 3000); // 3-second delay
 
     return () => {
-      clearTimeout(timer)
-      document.removeEventListener("mouseout", handleMouseOut)
-    }
-  }, [handleMouseOut])
+      clearTimeout(timer);
+      document.removeEventListener("mouseout", handleMouseOut);
+    };
+  }, [handleMouseOut]);
 
   if (!isOpen) {
-    return null
+    return null;
   }
 
   return (
     <Dialog
       open={isOpen}
       onOpenChange={(open) => {
-        setIsOpen(open)
-        if (!open) setHasTriggered(true) // If closed manually, still consider it triggered
+        setIsOpen(open);
+        if (!open) setHasTriggered(true); // If closed manually, still consider it triggered
       }}
     >
-      <DialogContent className="bg-vos-bg-light text-vos-text-primary border-2 border-vos-accent/50 shadow-2xl rounded-3xl max-w-xl p-0 flex flex-col max-h-[90vh]">
-        {/* Increased padding, increased space-y */}
-        <div className="p-8 md:p-10 text-center space-y-6 relative overflow-y-auto flex-grow">
+      <DialogContent className="bg-vos-bg-light text-vos-text-primary border-2 border-vos-accent/50 shadow-2xl rounded-3xl max-w-xl p-0 flex flex-col max-h-[85vh] overflow-hidden">
+        {/* Fixed positioning and made exit button more beautiful */}
+        <div className="p-6 md:p-8 text-center space-y-5 relative overflow-y-auto flex-grow">
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-4 right-4 text-vos-secondary hover:text-vos-primary hover:bg-vos-muted/70 rounded-full z-10"
+            className="absolute top-3 right-3 w-10 h-10 text-gray-400 hover:text-white hover:bg-red-500 hover:shadow-lg rounded-full transition-all duration-200 ease-in-out transform hover:scale-110 z-10 group"
             onClick={() => setIsOpen(false)}
           >
-            <X size={18} />
+            <X
+              size={20}
+              className="group-hover:rotate-90 transition-transform duration-200"
+            />
             <span className="sr-only">Close</span>
           </Button>
 
-          <div className="mx-auto text-7xl mb-3 text-vos-accent" role="img" aria-label="Cross emoji">
+          <div
+            className="mx-auto text-6xl mb-2 text-vos-accent"
+            role="img"
+            aria-label="Cross emoji"
+          >
             ✝️
           </div>
 
-          {/* Increased space-y, reverted font sizes */}
-          <DialogHeader className="space-y-3">
-            <DialogTitle className="font-serif text-3xl md:text-4xl font-bold text-vos-primary tracking-tight leading-tight">
+          {/* Better spacing for mobile */}
+          <DialogHeader className="space-y-2">
+            <DialogTitle className="font-serif text-2xl md:text-3xl font-bold text-vos-primary tracking-tight leading-tight">
               Wait! Your Path to Inner Peace is Calling...
             </DialogTitle>
-            <DialogDescription className="text-vos-secondary text-lg md:text-xl leading-relaxed px-2">
-              In a world filled with distractions, finding true serenity and a deeper connection can feel out of reach.
-              Voice of the Shepherd offers you a sanctuary – a space to listen, reflect, and be transformed.
+            <DialogDescription className="text-vos-secondary text-base md:text-lg leading-relaxed px-1">
+              In a world filled with distractions, finding true serenity and a
+              deeper connection can feel out of reach. Voice of the Shepherd
+              offers you a sanctuary – a space to listen, reflect, and be
+              transformed.
               <br />
               <br />
-              Don&apos;t let this moment pass. This <strong className="text-vos-primary">FREE gift</strong> could be the
-              start of a profound journey for your spirit. Are you ready to answer the call?
+              Don&apos;t let this moment pass. This{" "}
+              <strong className="text-vos-primary">FREE gift</strong> could be
+              the start of a profound journey for your spirit. Are you ready to
+              answer the call?
             </DialogDescription>
           </DialogHeader>
 
-          {/* Increased pt, reverted button padding and icon sizes */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          {/* Better button spacing */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-3">
             <Button
               size="lg"
-              className="bg-vos-primary text-white hover:bg-vos-primary-darker rounded-xl px-8 py-3 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto group"
+              className="bg-vos-primary text-white hover:bg-vos-primary-darker rounded-xl px-6 py-2.5 text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto group"
               onClick={() => {
-                /* Link to app store */ alert("Redirecting to App Store...")
-                setIsOpen(false)
+                /* Link to app store */ alert("Redirecting to App Store...");
+                setIsOpen(false);
               }}
             >
-              <Apple className="mr-2.5 h-6 w-6 group-hover:animate-subtle-pulse" />
+              <Apple className="mr-2 h-5 w-5 group-hover:animate-subtle-pulse" />
               Yes, Guide My Spirit (iOS)
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-vos-primary text-vos-primary hover:bg-vos-primary/10 hover:text-vos-primary-darker rounded-xl px-8 py-3 text-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all w-full sm:w-auto group"
+              className="border-vos-primary text-vos-primary hover:bg-vos-primary/10 hover:text-vos-primary-darker rounded-xl px-6 py-2.5 text-base shadow-md hover:shadow-lg transform hover:scale-105 transition-all w-full sm:w-auto group"
               onClick={() => {
-                /* Link to app store */ alert("Redirecting to Play Store...")
-                setIsOpen(false)
+                /* Link to app store */ alert("Redirecting to Play Store...");
+                setIsOpen(false);
               }}
             >
-              <DownloadCloud className="mr-2.5 h-6 w-6 group-hover:animate-subtle-pulse" />
+              <DownloadCloud className="mr-2 h-5 w-5 group-hover:animate-subtle-pulse" />
               Yes, Guide My Spirit (Android)
             </Button>
           </div>
-          {/* Reverted mt, kept text-sm */}
+          {/* Better "No" button positioning */}
           <Button
             variant="link"
-            className="text-vos-secondary hover:text-vos-primary mt-2 pb-1 text-sm"
+            className="text-vos-secondary hover:text-vos-primary mt-1 pb-1 text-sm"
             onClick={() => setIsOpen(false)}
           >
             No, Not Now
@@ -116,5 +133,5 @@ export function ExitIntentPopup() {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
