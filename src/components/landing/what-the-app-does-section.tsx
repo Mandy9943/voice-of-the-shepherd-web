@@ -110,9 +110,8 @@ export function WhatTheAppDoesSection() {
                 <Image
                   src={shot.src || "/placeholder.svg"}
                   alt={shot.alt}
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-500 ease-out group-hover:scale-105"
+                  fill={true}
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   priority={index < 2}
                 />
               </GoldFrame>

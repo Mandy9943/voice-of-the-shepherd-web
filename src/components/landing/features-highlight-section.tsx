@@ -1,6 +1,12 @@
-import Image from "next/image"
-import { PlayCircle, ListChecks, QuoteIcon, CalendarDays, Zap } from "lucide-react"
-import { GoldFrame } from "./gold-frame"
+import {
+  CalendarDays,
+  ListChecks,
+  PlayCircle,
+  QuoteIcon,
+  Zap,
+} from "lucide-react";
+import Image from "next/image";
+import { GoldFrame } from "./gold-frame";
 
 export function FeaturesHighlightSection() {
   return (
@@ -8,13 +14,16 @@ export function FeaturesHighlightSection() {
       <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div className="flex justify-center order-1 md:order-0 animate-fade-in-up animation-delay-200">
           <div className="relative group w-[330px] h-[620px] md:w-[350px] md:h-[660px]">
-            <GoldFrame className="w-full h-full" borderRadius="rounded-4xl" padding="p-2.5">
+            <GoldFrame
+              className="w-full h-full"
+              borderRadius="rounded-4xl"
+              padding="p-2.5"
+            >
               <Image
-                src="/audio-player-highlight.png?height=1200&width=650&query=ultra+premium+audio+player+app+screen+spiritual+theme+divine+lighting+interactive"
+                src="/audio-player-highlight.png"
                 alt="App Feature Highlight Screen - Audio Player"
-                layout="fill"
-                objectFit="cover"
-                className="transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                fill={true}
               />
             </GoldFrame>
             <div className="absolute -inset-3.5 rounded-[34px] border-2 border-vos-accent/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-slow-pulse-glow -z-10 shadow-highlight-glow" />
@@ -31,8 +40,11 @@ export function FeaturesHighlightSection() {
             </h2>
             <p className="text-lg md:text-xl text-vos-secondary leading-relaxed">
               Unlock features meticulously designed to{" "}
-              <strong className="text-vos-primary">deepen your connection</strong>, elevate your spirit, and bring
-              sacred teachings to life—right in your hands.
+              <strong className="text-vos-primary">
+                deepen your connection
+              </strong>
+              , elevate your spirit, and bring sacred teachings to life—right in
+              your hands.
             </p>
           </div>
 
@@ -73,7 +85,9 @@ export function FeaturesHighlightSection() {
                   <h3 className="text-xl md:text-2xl font-semibold text-vos-primary font-serif mb-1.5">
                     {feature.title}
                   </h3>
-                  <p className="text-vos-secondary text-sm md:text-base leading-relaxed">{feature.desc}</p>
+                  <p className="text-vos-secondary text-sm md:text-base leading-relaxed">
+                    {feature.desc}
+                  </p>
                 </div>
               </li>
             ))}
@@ -81,5 +95,5 @@ export function FeaturesHighlightSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
