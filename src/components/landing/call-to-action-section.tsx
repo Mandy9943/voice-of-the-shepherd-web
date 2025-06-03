@@ -5,9 +5,9 @@ export function CallToActionSection() {
   return (
     <section
       id="download"
-      className="w-full py-20 md:py-28 lg:py-36 bg-gradient-to-br from-vos-primary via-[#182a4a] to-vos-primary text-white bg-[size:200%_200%] animate-gradient-shift relative overflow-hidden"
+      className="w-full py-20 md:py-28 lg:py-36 bg-linear-to-br from-vos-primary via-[#182a4a] to-vos-primary text-white bg-size-[200%_200%] animate-gradient-shift relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 md:px-6 max-w-screen-md text-center space-y-8 md:space-y-10 animate-fade-in-up">
+      <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-md) text-center space-y-8 md:space-y-10 animate-fade-in-up">
         <div className="inline-flex items-center gap-3 bg-vos-accent text-vos-primary px-6 py-3 text-base font-bold rounded-full mb-4 uppercase tracking-wider shadow-lifted animate-bounce-subtle hover:shadow-highlight-glow transition-shadow">
           <Zap size={20} />
           <span>Your Moment of Transformation is NOW!</span>

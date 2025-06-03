@@ -4,9 +4,9 @@ import { GoldFrame } from "./gold-frame"
 
 export function FeaturesHighlightSection() {
   return (
-    <section className="w-full py-section-gap bg-gradient-to-br from-vos-muted/70 via-vos-bg-light to-vos-muted/70">
-      <div className="container mx-auto px-4 md:px-6 max-w-screen-lg grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div className="flex justify-center order-1 md:order-none animate-fade-in-up animation-delay-200">
+    <section className="w-full py-section-gap bg-linear-to-br from-vos-muted/70 via-vos-bg-light to-vos-muted/70">
+      <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="flex justify-center order-1 md:order-0 animate-fade-in-up animation-delay-200">
           <div className="relative group w-[330px] h-[620px] md:w-[350px] md:h-[660px]">
             <GoldFrame className="w-full h-full" borderRadius="rounded-4xl" padding="p-2.5">
               <Image
@@ -65,7 +65,7 @@ export function FeaturesHighlightSection() {
               >
                 <div className="p-3 bg-vos-accent/20 rounded-full mt-1 group-hover:bg-vos-accent/30 transition-colors duration-300 shadow-soft group-hover:shadow-glow_accent">
                   <feature.icon
-                    className="w-8 h-8 text-vos-accent flex-shrink-0 group-hover:scale-110 transition-transform"
+                    className="w-8 h-8 text-vos-accent shrink-0 group-hover:scale-110 transition-transform"
                     strokeWidth={1.75}
                   />
                 </div>

@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Apple, DownloadCloud, X } from "lucide-react";
+import { Apple, DownloadCloud } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
 export function ExitIntentPopup() {
@@ -55,20 +55,7 @@ export function ExitIntentPopup() {
     >
       <DialogContent className="bg-vos-bg-light text-vos-text-primary border-2 border-vos-accent/50 shadow-2xl rounded-3xl max-w-xl p-0 flex flex-col max-h-[85vh] overflow-hidden">
         {/* Fixed positioning and made exit button more beautiful */}
-        <div className="p-6 md:p-8 text-center space-y-5 relative overflow-y-auto flex-grow">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-3 right-3 w-10 h-10 text-gray-400 hover:text-white hover:bg-red-500 hover:shadow-lg rounded-full transition-all duration-200 ease-in-out transform hover:scale-110 z-10 group"
-            onClick={() => setIsOpen(false)}
-          >
-            <X
-              size={20}
-              className="group-hover:rotate-90 transition-transform duration-200"
-            />
-            <span className="sr-only">Close</span>
-          </Button>
-
+        <div className="p-6 md:p-8 text-center space-y-5 relative overflow-y-auto grow">
           <div
             className="mx-auto text-6xl mb-2 text-vos-accent"
             role="img"
@@ -97,7 +84,7 @@ export function ExitIntentPopup() {
           </DialogHeader>
 
           {/* Better button spacing */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-3">
+          <div className="flex flex-col  gap-3 justify-center pt-3">
             <Button
               size="lg"
               className="bg-vos-primary text-white hover:bg-vos-primary-darker rounded-xl px-6 py-2.5 text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all w-full sm:w-auto group"

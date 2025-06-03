@@ -17,7 +17,7 @@ export function GoldFrame({
   return (
     <div
       className={cn(
-        "relative inline-block bg-gradient-to-br from-vos-accent via-[#c0a030] to-vos-accent shadow-gold-frame hover:shadow-gold-frame-hover transition-shadow duration-300",
+        "relative inline-block bg-linear-to-br from-vos-accent via-[#c0a030] to-vos-accent shadow-gold-frame hover:shadow-gold-frame-hover transition-shadow duration-300",
         padding,
         borderRadius,
         className,
@@ -29,7 +29,7 @@ export function GoldFrame({
         className={cn(
           "absolute inset-0.5 pointer-events-none",
           borderRadius,
-          "shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),_inset_0_-1px_2px_rgba(0,0,0,0.1)]",
+          "shadow-[inset_0_1px_2px_rgba(255,255,255,0.3),inset_0_-1px_2px_rgba(0,0,0,0.1)]",
         )}
       />
     </div>

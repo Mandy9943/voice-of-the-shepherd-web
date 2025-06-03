@@ -4,7 +4,7 @@ import { Instagram, Youtube, BookHeart } from "lucide-react" // Added BookHeart
 export function Footer() {
   return (
     <footer className="bg-vos-muted py-10 md:py-12 text-vos-secondary border-t border-vos-border/70">
-      <div className="container mx-auto px-4 md:px-6 max-w-screen-lg flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
         <div className="flex items-center gap-2 text-sm">
           <BookHeart size={18} className="text-vos-primary/70" />
           <span>&copy; {new Date().getFullYear()} Voice of the Shepherd.</span>

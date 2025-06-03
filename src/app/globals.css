@@ -8,6 +8,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-vos-text-primary: var(--vos-text-primary);
+  --color-vos-bg-light: var(--vos-bg-light);
+  --color-vos-card-light: var(--vos-card-light);
+  --color-vos-primary: var(--vos-primary);
+  --color-vos-primary-darker: var(--vos-primary-darker);
+  --color-vos-secondary: var(--vos-secondary);
+  --color-vos-accent: var(--vos-accent);
+  --color-vos-muted: var(--vos-muted);
+  --color-vos-border: var(--vos-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -41,6 +50,50 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --spacing-section-gap: var(--section-gap);
+
+  /* Migrated border radiuses from Tailwind config */
+  --radius-tw-xl: var(--border-radius-xl);        /* 0.75rem */
+  --radius-tw-2xl: var(--border-radius-2xl);       /* 1rem */
+  --radius-tw-3xl: var(--border-radius-3xl);       /* 1.25rem */
+  --radius-tw-4xl: var(--border-radius-4xl);       /* 1.5rem */
+
+  /* Migrated box shadows */
+  --shadow-soft: var(--box-shadow-soft);
+  --shadow-subtle: var(--box-shadow-subtle);
+  --shadow-medium: var(--box-shadow-medium);
+  --shadow-lifted: var(--box-shadow-lifted);
+  --shadow-glow-accent: var(--box-shadow-glow-accent);
+  --shadow-inner-soft: var(--box-shadow-inner-soft);
+  --shadow-cta-glow: var(--box-shadow-cta-glow);
+  --shadow-gold-frame: var(--box-shadow-gold-frame);
+  --shadow-gold-frame-hover: var(--box-shadow-gold-frame-hover);
+  --shadow-highlight-glow: var(--box-shadow-highlight-glow);
+
+  /* Migrated animations */
+  --animate-accordion-down: var(--animation-accordion-down);
+  --animate-accordion-up: var(--animation-accordion-up);
+  --animate-subtle-pulse: var(--animation-subtle-pulse);
+  --animate-fade-in-up: var(--animation-fade-in-up);
+  --animate-gradient-shift: var(--animation-gradient-shift);
+  --animate-shine: var(--animation-shine);
+  --animate-slow-pulse-glow: var(--animation-slow-pulse-glow);
+  --animate-star-fill: var(--animation-star-fill);
+  --animate-bounce-subtle: var(--animation-bounce-subtle);
+  --animate-reveal-light: var(--animation-reveal-light);
+
+  /* Migrated background image and size */
+  --bg-image-shine-gradient: var(--background-image-shine-gradient);
+  --bg-size-200pct-full-height: var(--background-size-200pct-full-height);
+
+  /* Migrated container properties */
+  --spacing-container-padding: var(--container-padding);
+  --size-screen-2xl: var(--screen-2xl);
+
+  /* Migrated font properties */
+  --font-serif: var(--font-serif); /* This uses the --font-serif from :root */
+  --font-sans-stack: var(--default-font-sans-stack);
+  --font-serif-stack: var(--default-font-serif-stack);
 }
 
 :root {
@@ -76,6 +129,57 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --vos-text-primary: "#F5F2E7";
+  --vos-bg-light: #F5F2E7;
+  --vos-card-light: #FFFFFF;
+  --vos-primary: #223C63;
+  --vos-primary-darker: #1A2E4F;
+  --vos-secondary: #6E665D;
+  --vos-accent: #D4AF37;
+  --vos-muted: #E5E0D5;
+  --vos-border: #D8D0C0;
+  --section-gap: clamp(3.5rem, 12vw, 6rem);
+
+  --border-radius-xl: 0.75rem;
+  --border-radius-2xl: 1rem;
+  --border-radius-3xl: 1.25rem;
+  --border-radius-4xl: 1.5rem;
+
+  --box-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --box-shadow-subtle: 0 2px 6px rgba(0,0,0,0.06);
+  --box-shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --box-shadow-lifted: 0 12px 24px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.06);
+  --box-shadow-glow-accent: 0 0 20px 2px rgba(212, 175, 55, 0.35);
+  --box-shadow-inner-soft: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --box-shadow-cta-glow: 0 0 25px 5px rgba(212, 175, 55, 0.4);
+  --box-shadow-gold-frame: 0 0 0 2px #D4AF37, 0 0 0 4px rgba(212,175,55,0.3), 0 4px 8px rgba(0,0,0,0.2);
+  --box-shadow-gold-frame-hover: 0 0 0 3px #D4AF37, 0 0 0 6px rgba(212,175,55,0.4), 0 6px 12px rgba(0,0,0,0.25);
+  --box-shadow-highlight-glow: 0 0 30px 8px rgba(212, 175, 55, 0.5);
+
+  --animation-accordion-down: accordion-down 0.2s ease-out;
+  --animation-accordion-up: accordion-up 0.2s ease-out;
+  --animation-subtle-pulse: subtle-pulse 2.8s ease-in-out infinite;
+  --animation-fade-in-up: fade-in-up 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+  --animation-gradient-shift: gradient-shift 4s ease infinite;
+  --animation-shine: shine 3s linear infinite;
+  --animation-slow-pulse-glow: slow-pulse-glow 3s ease-in-out infinite;
+  --animation-star-fill: star-fill 0.5s ease-out forwards;
+  --animation-bounce-subtle: bounce-subtle 2.5s ease-in-out infinite;
+  --animation-reveal-light: reveal-light 1s ease-out forwards;
+
+  --background-image-shine-gradient: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  --background-size-200pct-full-height: 200% 100%;
+
+  /* Migrated from tailwind.config.ts theme.container */
+  --container-padding: 1rem;
+  --screen-2xl: 1400px; /* Corresponds to Tailwind's 2xl screen for container max-width */
+
+  /* Migrated from tailwind.config.ts theme.extend.fontFamily (default fallbacks) */
+  /* --font-sans is already defined via --font-geist-sans */
+  /* --font-mono is already defined via --font-geist-mono */
+  --font-serif: var(--font-geist-serif, serif); /* Define --font-geist-serif or use system serif */
+  --default-font-sans-stack: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font-serif-stack: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .dark {
@@ -110,6 +214,49 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --vos-text-primary: #333333;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .85; transform: scale(1.03); }
+}
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes slow-pulse-glow {
+  0%, 100% { box-shadow: 0 0 18px 2px rgba(212, 175, 55, 0.25); }
+  50% { box-shadow: 0 0 28px 6px rgba(212, 175, 55, 0.45); }
+}
+@keyframes star-fill {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes reveal-light {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
 }
 
 @layer base {
@@ -119,4 +266,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+[role=button], button, [role=link] {
+  cursor: pointer;
 }

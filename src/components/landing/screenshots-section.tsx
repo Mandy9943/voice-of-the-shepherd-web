@@ -14,7 +14,7 @@ const screenshots = [
 export function ScreenshotsSection() {
   return (
     <section className="w-full py-section-gap bg-vos-card-light border-b border-vos-border/50">
-      <div className="container mx-auto px-4 md:px-6 max-w-screen-lg space-y-16 md:space-y-20">
+      <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) space-y-16 md:space-y-20">
         <div className="text-center space-y-4 md:space-y-5 animate-fade-in-up">
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.75rem] font-bold text-vos-primary tracking-tight leading-tight">
             Immerse Yourself in Visual Serenity
@@ -29,7 +29,7 @@ export function ScreenshotsSection() {
           {screenshots.map((shot, index) => (
             <div
               key={index}
-              className="aspect-[9/18] group animate-fade-in-up transform hover:scale-105 transition-transform duration-300 ease-out"
+              className="aspect-9/18 group animate-fade-in-up transform hover:scale-105 transition-transform duration-300 ease-out"
               style={{ animationDelay: `${200 + index * 100}ms` }}
             >
               <GoldFrame className="w-full h-full" borderRadius="rounded-3xl" padding="p-1.5">

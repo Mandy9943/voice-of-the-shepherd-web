@@ -121,7 +121,7 @@ export function PersonalizedPathFinder() {
 
   return (
     <section className="w-full py-section-gap bg-vos-muted/70">
-      <div className="container mx-auto px-4 md:px-6 max-w-screen-md">
+      <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-md)">
         <Card className="bg-vos-card-light shadow-xl border-2 border-vos-border/60 rounded-3xl overflow-hidden animate-fade-in-up">
           {!showPath ? (
             <>
@@ -168,7 +168,7 @@ export function PersonalizedPathFinder() {
             </>
           ) : pathPreview ? (
             <>
-              <CardHeader className="text-center p-8 bg-gradient-to-br from-vos-accent/20 via-vos-bg-light to-vos-accent/10 border-b-2 border-vos-accent/50">
+              <CardHeader className="text-center p-8 bg-linear-to-br from-vos-accent/20 via-vos-bg-light to-vos-accent/10 border-b-2 border-vos-accent/50">
                 <Check className="mx-auto h-16 w-16 text-vos-accent mb-4 p-3 bg-white rounded-full shadow-lg border-2 border-vos-accent/50" />
                 <CardTitle className="font-serif text-3xl lg:text-4xl font-bold text-vos-primary tracking-tight">
                   {pathPreview.title}
@@ -181,7 +181,7 @@ export function PersonalizedPathFinder() {
                 <ul className="space-y-4">
                   {pathPreview.points.map((point, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <Check className="w-6 h-6 text-green-600 shrink-0 mt-1" />
                       <span className="text-vos-secondary text-lg">{point}</span>
                     </li>
                   ))}

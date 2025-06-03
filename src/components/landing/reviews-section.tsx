@@ -37,7 +37,7 @@ const reviews = [
 export function ReviewsSection() {
   return (
     <section className="w-full py-section-gap bg-vos-bg-light">
-      <div className="container mx-auto px-4 md:px-6 max-w-screen-lg space-y-16 md:space-y-20">
+      <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) space-y-16 md:space-y-20">
         <div className="text-center space-y-4 md:space-y-5 animate-fade-in-up">
           <div className="inline-flex items-center gap-3 bg-vos-accent/10 text-vos-accent border-2 border-vos-accent/40 px-5 py-2 rounded-full text-base font-semibold mb-4 shadow-soft hover:shadow-glow_accent transition-shadow">
             <Users size={20} />
@@ -79,7 +79,7 @@ export function ReviewsSection() {
                   {review.title}
                 </h3>
               </CardHeader>
-              <CardContent className="p-6 md:p-7 pt-0 flex-grow">
+              <CardContent className="p-6 md:p-7 pt-0 grow">
                 <Quote className="w-9 h-9 text-vos-accent/30 mb-2.5 -ml-1.5" strokeWidth={1.25} />
                 <p className="text-vos-secondary text-sm md:text-base leading-relaxed italic">
                   &ldquo;{review.review}&rdquo;

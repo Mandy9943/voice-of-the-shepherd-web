@@ -24,7 +24,7 @@ const benefits = [
 export function UserBenefitsSection() {
   return (
     <section className="w-full py-section-gap bg-vos-card-light border-b border-vos-border/50">
-      <div className="container mx-auto px-4 md:px-6 max-w-screen-lg space-y-16 md:space-y-20">
+      <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) space-y-16 md:space-y-20">
         <div className="text-center space-y-4 md:space-y-5 animate-fade-in-up">
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.75rem] font-bold text-vos-primary tracking-tight leading-tight">
             The Transformation You Seek Awaits...
