@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Ear, BookmarkPlus, HeartHandshake } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BookmarkPlus, Ear, HeartHandshake } from "lucide-react";
 
 const benefits = [
   {
@@ -11,7 +11,8 @@ const benefits = [
   {
     icon: BookmarkPlus,
     title: "Curate Sacred Wisdom",
-    description: "Capture every insight. Build your personal library of inspiration before precious thoughts fade.",
+    description:
+      "Capture every insight. Build your personal library of inspiration before precious thoughts fade.",
   },
   {
     icon: HeartHandshake,
@@ -19,7 +20,7 @@ const benefits = [
     description:
       "Why wait for growth? Deepen your connection and understanding today with consistent, divinely-guided engagement.",
   },
-]
+];
 
 export function UserBenefitsSection() {
   return (
@@ -30,7 +31,8 @@ export function UserBenefitsSection() {
             The Transformation You Seek Awaits...
           </h2>
           <p className="text-lg md:text-xl text-vos-secondary max-w-3xl mx-auto leading-relaxed">
-            Voice of the Shepherd guides you toward a life of deeper meaning, peace, and spiritual connection.
+            Voice of the Shepherd guides you toward a life of deeper meaning,
+            peace, and spiritual connection.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -41,7 +43,7 @@ export function UserBenefitsSection() {
               style={{ animationDelay: `${200 + idx * 100}ms` }}
             >
               <CardHeader className="items-center pt-8 md:pt-10">
-                <div className="relative p-4 bg-vos-accent/20 rounded-full mb-6 inline-block group-hover:bg-vos-accent/30 transition-colors duration-300 shadow-soft group-hover:shadow-glow_accent">
+                <div className="w-fit mx-auto relative p-4 bg-vos-accent/20 rounded-full mb-6 inline-block group-hover:bg-vos-accent/30 transition-colors duration-300 shadow-soft group-hover:shadow-glow_accent">
                   <benefit.icon
                     className="w-10 h-10 md:w-11 md:h-11 text-vos-accent group-hover:scale-110 transition-transform duration-300"
                     strokeWidth={1.5}
@@ -52,12 +54,14 @@ export function UserBenefitsSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center pb-8 md:pb-10 px-6">
-                <p className="text-vos-secondary text-sm md:text-base leading-relaxed">{benefit.description}</p>
+                <p className="text-vos-secondary text-sm md:text-base leading-relaxed">
+                  {benefit.description}
+                </p>
               </CardContent>
             </Card>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
