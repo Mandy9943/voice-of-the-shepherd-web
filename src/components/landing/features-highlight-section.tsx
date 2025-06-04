@@ -13,7 +13,7 @@ export function FeaturesHighlightSection() {
     <section className="w-full py-section-gap bg-linear-to-br from-vos-muted/70 via-vos-bg-light to-vos-muted/70">
       <div className="container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         <div className="flex justify-center order-1 md:order-0 animate-fade-in-up animation-delay-200">
-          <div className="relative group w-[330px] h-[620px] md:w-[350px] md:h-[660px]">
+          <div className="relative group w-full h-[480px] md:w-[350px] md:h-[660px]">
             <GoldFrame
               className="w-full h-full"
               borderRadius="rounded-4xl"
