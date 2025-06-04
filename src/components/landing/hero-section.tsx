@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Apple, DownloadCloud, Gift, Users } from "lucide-react";
-import { ImageCollageCanvas } from "./image-collage-canvas";
+import HeroImages from "./hero-images";
 
 export function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-vos-bg-light isolate">
-      <ImageCollageCanvas />
+      <HeroImages />
       <div className="absolute inset-0 bg-linear-to-b from-vos-bg-light/75 via-vos-bg-light/45 to-vos-bg-light/85 md:from-vos-bg-light/65 md:via-vos-bg-light/25 md:to-vos-bg-light/75 z-0" />
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 max-w-(--breakpoint-lg) text-center py-20 md:py-0">
@@ -31,7 +31,7 @@ export function HeroSection() {
             spiritual growth.{" "}
             <strong className="text-vos-primary">This is your moment.</strong>
           </p>
-          <div className="flex  gap-4 sm:gap-5 md:gap-6 justify-center pt-6 md:pt-8 lg:pt-10 animate-fade-in-up animation-delay-900 px-4">
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-5 md:gap-6 justify-center pt-6 md:pt-8 lg:pt-10 animate-fade-in-up animation-delay-900 px-4">
             <Button
               size="lg"
               className="bg-vos-primary text-white hover:bg-vos-primary-darker rounded-3xl px-8 py-3.5 md:px-10 md:py-4 text-base md:text-lg lg:text-xl shadow-lifted hover:shadow-cta-glow transform hover:scale-105 transition-all duration-300 ease-out group relative overflow-hidden animation-delay-1000 w-full sm:w-auto"
