@@ -16,13 +16,14 @@ const imageAssets = [
   {
     src: "/serene-landscape-cross.png?query=serene+landscape+distant+cross+misty",
     alt: "Calm landscape with cross",
-    className: "bottom-[-320px] hidden md:hidden xl:block",
+    className: "bottom-[-210px] hidden md:hidden xl:block 2xl:bottom-[-310px]",
   },
 
   {
     src: "/ancient-religious-scroll.png?query=ancient+scroll+texture+soft+focus",
     alt: "Ancient scroll texture",
-    className: "bottom-[-200px] xl:bottom-[-320px] hidden md:block",
+    className:
+      "bottom-[-200px]  xl:bottom-[-210px] 2xl:bottom-[-310px] hidden md:block",
   },
   {
     src: "/abstract-spiritual-light.png",
