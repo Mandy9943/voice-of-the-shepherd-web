@@ -25,7 +25,7 @@ const featuresList = [
 
 const screenshotData = [
   {
-    src: "/generic-app-screenshot.png?height=1000&width=500&query=premium+spiritual+app+screenshot+1+calm+interface+elegant+content+focused+divine+light",
+    src: "/screenshot-1.jpg",
     alt: "App Screenshot 1 - Content View",
     rotation: "-rotate-3",
     zIndex: "z-10",
@@ -33,7 +33,7 @@ const screenshotData = [
     positionClasses: "md:translate-x-[-18%] md:translate-y-[3%]",
   },
   {
-    src: "/generic-app-screenshot.png?height=1050&width=525&query=premium+spiritual+app+screenshot+2+elegant+player+interface+glowing+controls",
+    src: "/screenshot-2.jpg",
     alt: "App Screenshot 2 - Player View",
     rotation: "rotate-1",
     zIndex: "z-20",
@@ -41,7 +41,7 @@ const screenshotData = [
     positionClasses: "md:translate-y-[-2%]",
   },
   {
-    src: "/generic-app-screenshot.png?height=1000&width=500&query=premium+spiritual+app+screenshot+3+serene+daily+quote+view+heavenly+background",
+    src: "/screenshot-3.jpg",
     alt: "App Screenshot 3 - Daily Quote",
     rotation: "rotate-3",
     zIndex: "z-10",

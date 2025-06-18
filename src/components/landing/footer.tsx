@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Instagram, Youtube, BookHeart } from "lucide-react" // Added BookHeart
+import { BookHeart } from "lucide-react"; // Added BookHeart
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -10,38 +10,14 @@ export function Footer() {
           <span>&copy; {new Date().getFullYear()} Voice of the Shepherd.</span>
         </div>
         <nav className="flex gap-x-6 gap-y-3 flex-wrap justify-center">
-          <Link href="/privacy" className="text-sm hover:text-vos-primary transition-colors duration-200">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="text-sm hover:text-vos-primary transition-colors duration-200">
-            Terms of Service
-          </Link>
           <Link
-            href="https://github.com/vercel/v0" // Example link
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/privacy-policy"
             className="text-sm hover:text-vos-primary transition-colors duration-200"
           >
-            GitHub
+            Privacy Policy
           </Link>
         </nav>
-        <div className="flex gap-5">
-          <Link
-            href="#"
-            aria-label="Instagram"
-            className="text-vos-secondary hover:text-vos-primary transition-colors duration-200 transform hover:scale-110"
-          >
-            <Instagram size={22} strokeWidth={1.75} />
-          </Link>
-          <Link
-            href="#"
-            aria-label="YouTube"
-            className="text-vos-secondary hover:text-vos-primary transition-colors duration-200 transform hover:scale-110"
-          >
-            <Youtube size={22} strokeWidth={1.75} />
-          </Link>
-        </div>
       </div>
     </footer>
-  )
+  );
 }

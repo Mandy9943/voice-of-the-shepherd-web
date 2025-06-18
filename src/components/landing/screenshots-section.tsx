@@ -5,19 +5,23 @@ const screenshots = [
   {
     query: "serene lake app screen spiritual theme ultra hd photorealistic",
     alt: "App screen with lake background",
+    src: "/screenshot-5.jpg",
   },
   {
     query: "forest path app screen spiritual theme ultra hd photorealistic",
     alt: "App screen with forest path",
+    src: "/screenshot-6.jpg",
   },
   {
     query:
       "mountain sunrise app screen spiritual theme ultra hd photorealistic",
     alt: "App screen with mountain sunrise",
+    src: "/screenshot-7.jpg",
   },
   {
     query: "calm beach app screen spiritual theme ultra hd photorealistic",
     alt: "App screen with calm beach",
+    src: "/screenshot-8.jpg",
   },
 ];
 
@@ -50,10 +54,7 @@ export function ScreenshotsSection() {
                 padding="p-1.5"
               >
                 <Image
-                  src={`/abstract-geometric-shapes.png?height=1200&width=600&query=${shot.query.replace(
-                    /\s/g,
-                    "+"
-                  )}`}
+                  src={shot.src}
                   alt={shot.alt}
                   fill={true}
                   className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"

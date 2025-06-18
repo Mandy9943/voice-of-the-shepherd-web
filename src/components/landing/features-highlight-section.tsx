@@ -20,7 +20,7 @@ export function FeaturesHighlightSection() {
               padding="p-2.5"
             >
               <Image
-                src="/audio-player-highlight.png"
+                src="/screenshot-4.jpg"
                 alt="App Feature Highlight Screen - Audio Player"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
                 fill={true}
