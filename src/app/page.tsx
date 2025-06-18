@@ -11,12 +11,43 @@ import { ReviewsSection } from "@/components/landing/reviews-section";
 import { ScreenshotsSection } from "@/components/landing/screenshots-section";
 import { UserBenefitsSection } from "@/components/landing/user-benefits-section";
 import { WhatTheAppDoesSection } from "@/components/landing/what-the-app-does-section";
+import { siteConfig } from "@/lib/site";
 
 export const runtime = "edge";
 
 export default function LandingPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: siteConfig.name,
+    operatingSystem: "iOS, Android",
+    applicationCategory: "Lifestyle",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9", // Placeholder value
+      ratingCount: "256", // Placeholder value
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    description: siteConfig.description,
+    url: siteConfig.url,
+    screenshot: [
+      `${siteConfig.url}/screenshot-1.jpg`,
+      `${siteConfig.url}/screenshot-2.jpg`,
+      `${siteConfig.url}/screenshot-3.jpg`,
+      `${siteConfig.url}/screenshot-4.jpg`,
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-dvh bg-vos-bg-light text-vos-text-primary selection:bg-vos-accent/30 selection:text-vos-primary">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <FreeAppBanner />
       <Header />
       <main className="flex-1">
